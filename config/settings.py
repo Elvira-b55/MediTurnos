@@ -26,6 +26,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -85,10 +86,12 @@ TIME_ZONE = 'America/Argentina/Buenos_Aires'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Archivos estáticos (CSS, JS, imágenes)
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'   # carpeta donde collectstatic guarda todo
+STATICFILES_DIRS = [BASE_DIR / 'static'] # si tenés una carpeta 'static' con tus propios archivos
 
 # Media files
 MEDIA_URL = '/media/'
