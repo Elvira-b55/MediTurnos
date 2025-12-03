@@ -16,7 +16,7 @@ env/
 .virtualenv/
 *.virtualenv
 *.log
-db.sqlite3
+
 db.sqlite3-journal
 /media/
 /staticfiles/
@@ -72,8 +72,8 @@ celerybeat.pid
 *~
 *.log
 *.sql
-*.sqlite
-*.sqlite3
+
+
 media/
 staticfiles/
 static_root/
